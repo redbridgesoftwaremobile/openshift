@@ -14,8 +14,14 @@ public class StreamsApp {
 		lista = new ArrayList<>();
 		lista.add("Mito");
 		lista.add("Code");
-		lista.add("Jaime");
+		lista.add("Huracan");
 		lista.add("MitoCode");
+        lista.add("Redbridge");
+        lista.add("Tornado");
+        lista.add("Temblor");
+        lista.add("Sunami");
+        lista.add("Tifon");
+        lista.add("Maremoto");
 		
 		numeros = new ArrayList<>();
 		numeros.add("1");
@@ -54,6 +60,12 @@ public class StreamsApp {
 		String result = lista.stream().map(x->x.toUpperCase()).collect(Collectors.joining(","));
 		System.out.println(result);
 	}
+
+    public void agregarTexto(){
+        StringBuilder sb = new StringBuilder();
+		lista.stream().limit(5).forEach(x->sb.append(x).append("--"));
+		System.out.println(sb);
+	}
 		
 	public static void main(String[] args) {
 		StreamsApp app = new StreamsApp();
@@ -62,7 +74,8 @@ public class StreamsApp {
 		//app.transformar();
 		//app.limitar();
 		//app.contar();
-		app.collectar();
+		//app.collectar();
+        app.agregarTexto();
 		
 	}
 }
